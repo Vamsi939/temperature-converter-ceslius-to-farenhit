@@ -1,33 +1,18 @@
-<!DOCTYPE html>
-<html>
-<title>Celsius to Fahrenheit Temperature Converter</title>
-<body>
+import java.util.Scanner;
 
-<h2>Temperature Converter</h2>
-<p>Type a value in the Celsius field to convert the value to Fahrenheit:</p>
+public class CelsiusToFahrenheitConverter {
+    public static void main(String[] args) {
+       
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter temperature in Celsius: ");
+        double celsius = scanner.nextDouble();
+        scanner.close();
+        double fahrenheit = celsiusToFahrenheit(celsius);
 
-<p>
-  <label>Celsius</label>
-  <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this<!DOCTYPE html>
-<html>
-<title>Celsius to Fahrenheit Temperature Converter</title>
-<body>
+        System.out.println(celsius + " Celsius is equal to " + fahrenheit + " Fahrenheit");
+    }
 
-<h2>Temperature Converter</h2>
-<p>Type a value in the Celsius field to convert the value to Fahrenheit:</p>
-
-<p>
-  <label>Celsius</label>
-  <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
-</p>
-<p>Fahrenheit: <span id="outputFahrenheit"></span></p>
-
-<script>
-function temperatureConverter(valNum) {
-  valNum = parseFloat(valNum);
-  document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
+    private static double celsiusToFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
 }
-</script>
-
-</body>
-</html>
